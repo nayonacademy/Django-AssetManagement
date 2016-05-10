@@ -1,0 +1,89 @@
+{% load staticfiles %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<title>Asset Mangement | {% block title %}{% endblock title %}</title>
+	<link rel="stylesheet" href="{% static 'assetapp/css/style.css' %}" type="text/css" media="all" />
+<style>
+  .forare label {
+  display: block !important;
+  padding-bottom: 5px;
+}
+</style>
+</head>
+<body>
+<!-- Header -->
+<div id="header">
+	<div class="shell">
+		<!-- Logo + Top Nav -->
+		<div id="top">
+			<h1><a href="#">Simple Asset Management</a></h1>
+		</div>
+		<!-- End Logo + Top Nav -->
+		<!-- Main Nav -->
+		<div id="navigation">
+			<ul>
+                <li><a href="{% url 'show_distribution' %}" class="active"><span>Distribution</span></a></li>
+			    <li><a href="{% url 'members' %}"><span>Members</span></a></li>
+			    <li><a href="{% url 'assets' %}"><span>Assets</span></a></li>
+			</ul>
+		</div>
+		<!-- End Main Nav -->
+	</div>
+</div>
+<!-- End Header -->
+<!-- Container -->
+<div id="container">
+	<div class="shell">
+        <br>
+		<!-- Main -->
+		<div id="main">
+			<div class="cl">&nbsp;</div>
+			<!-- Content -->
+			<div id="content">
+				{% block content %}{% endblock content %}
+			</div>
+			<!-- End Content -->
+			<!-- Sidebar -->
+			<div id="sidebar">
+				<!-- Box -->
+				<div class="box">
+					<!-- Box Head -->
+					<div class="box-head">
+						<h2>Management</h2>
+					</div>
+					<!-- End Box Head-->
+					<div class="box-content">
+						<a href="{% url 'addmembers' %}" class="add-button"><span>Add new Member</span></a>
+						<div class="cl">&nbsp;</div>
+                        <br>
+						<a href="{% url 'addasset' %}" class="add-button"><span>Add new Asset</span></a>
+						<div class="cl">&nbsp;</div>
+                        <br>
+						<a href="{% url 'distribution' %}" class="add-button"><span>Product Distribution</span></a>
+						<div class="cl">&nbsp;</div>
+						<!-- Sort -->
+					</div>
+				</div>
+				<!-- End Box -->
+			</div>
+			<!-- End Sidebar -->
+			<div class="cl">&nbsp;</div>			
+		</div>
+		<!-- Main -->
+	</div>
+</div>
+<!-- End Container -->
+<!-- Footer -->
+<div id="footer">
+	<div class="shell">
+		<span class="left">&copy; 2016 - Simple Asset Management</span>
+		<span class="right">
+			Developed by <a href="http://nayon.info" target="_blank">nayon.info</a>
+		</span>
+	</div>
+</div>
+<!-- End Footer -->
+</body>
+</html>

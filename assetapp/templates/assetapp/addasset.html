@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}Add New Asset{% endblock title %}
+{% block content %}
+<!-- Box -->
+<div class="box">
+    <!-- Box Head -->
+    <div class="box-head">
+        <h2>Add New Asset</h2>
+    </div>
+    <!-- End Box Head -->
+
+ <form action="" method="POST">
+     {% csrf_token %}
+<div class="form">
+    <p>
+        <label>Full Name <span>(Required Field)</span></label>
+        {{ form.name }}
+    </p>
+    <p>
+        <label>Asset Type <span>(Required Field)</span></label>
+        {{ form.assettype }}
+    </p>
+    <p>
+        <label>Price <span>(Required Field)</span></label>
+        {{ form.price }}
+    </p>
+    <p>
+        <label>Date <span>(Required Field)</span></label>
+        {{ form.date }}
+    </p>
+    <div class="buttons">
+        <input type="submit" class="button" value="submit" />
+    </div>
+</div>
+ </form>
+</div>
+{% endblock content %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Member List and new entry{% endblock title %}
+{% block content %}
+<!-- Box -->
+<div class="box">
+    <!-- Box Head -->
+    <div class="box-head">
+        <h2 class="left">Product Distribution</h2>
+        <div class="right">
+            <label>search articles</label>
+            <input type="text" class="field small-field" />
+            <input type="submit" class="button" value="search" />
+        </div>
+    </div>
+    <!-- End Box Head -->
+    <div class="forare" style="padding: 12px;">
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="member">Member Name</label>
+        {{ form.member }}<br> <br>
+        <label for="asset">Asset Name</label>
+        {{ form.asset }}<br> <br>
+        <label for="assigndate">Product Assign Date</label>
+        {{ form.assignment_date }}<br> <br>
+        <input type="submit" value="assign">
+    </form>
+    </div>
+</div>
+<!-- End Box -->
+{% endblock content %}

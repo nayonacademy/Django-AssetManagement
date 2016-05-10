@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block title %}All Assets{% endblock title %}
+{% block content %}
+<!-- Box -->
+<div class="box">
+    <!-- Box Head -->
+    <div class="box-head">
+        <h2 class="left">All Assets</h2>
+        <div class="right">
+            <label>search articles</label>
+            <input type="text" class="field small-field" />
+            <input type="submit" class="button" value="search" />
+        </div>
+    </div>
+    <!-- End Box Head -->
+
+    <!-- Table -->
+    <div class="table">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <th width="13"><input type="checkbox" class="checkbox" /></th>
+                <th>Name</th>
+                <th>Asset Type</th>
+                <th>Price</th>
+                <th>Date</th>
+                <th width="110" class="ac">Content Control</th>
+            </tr>
+             {% for obj in object_list %}
+            <tr>
+                <td><input type="checkbox" class="checkbox" /></td>
+                <td><h3><a href="#">{{ obj.name }}</a></h3></td>
+                <td>{{ obj.id }}</td>
+                <td>{{ obj.assettype }}</td>
+                <td>{{ obj.price }}</td>
+                <td>{{ obj.date }}</td>
+                <td><a href='{% url "assetdelete" obj.id %}' class="ico del">Delete</a><a href='{% url "assetupdate" obj.id %}' class="ico edit">Edit</a><a href='{% url "assets" obj.id %}' class="ico edit">Details</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+
+
+        <!-- Pagging -->
+        <div class="pagging">
+            <div class="left">Showing 1-12 of 44</div>
+            <div class="right">
+                <a href="#">Previous</a>
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">245</a>
+                <span>...</span>
+                <a href="#">Next</a>
+                <a href="#">View all</a>
+            </div>
+        </div>
+        <!-- End Pagging -->
+
+    </div>
+    <!-- Table -->
+
+</div>
+{% endblock content %}

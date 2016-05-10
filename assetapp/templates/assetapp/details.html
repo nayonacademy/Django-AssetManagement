@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}All Assets{% endblock title %}
+{% block content %}
+<div class="box">
+    <!-- Box Head -->
+    <div class="box-head">
+        <h2>Full Details of Member</h2>
+    </div>
+    <!-- End Box Head -->
+        <!-- Form -->
+        <div class="form">
+            <label>Name : </label>
+            <p>{{ more.name }}</p>
+             <label>Email Address : </label>
+            <p>{{ more.email }}</p>
+             <label>Phone Number : </label>
+            <p>{{ more.phone }}</p>
+
+        </div>
+        <!-- End Form -->
+</div>
+{% endblock content %}

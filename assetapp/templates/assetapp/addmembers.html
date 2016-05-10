@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Member List and new entry{% endblock title %}
+{% block content %}
+<!-- Box -->
+<div class="box">
+    <!-- Box Head -->
+    <div class="box-head">
+        <h2>Add New Member</h2>
+    </div>
+    <!-- End Box Head -->
+ <form action="" method="POST">
+     {% csrf_token %}
+<div class="form">
+    <p>
+        <label>Full Name <span>(Required Field)</span></label>
+        {{ form.name }}
+    </p>
+    <p>
+        <label>Email Address <span>(Required Field)</span></label>
+        {{ form.email }}
+    </p>
+    <p>
+        <label>Phone No. <span>(Required Field)</span></label>
+        {{ form.phone }}
+    </p>
+    <p>
+        <label>Designation <span>(Required Field)</span></label>
+        {{ form.designation }}
+    </p>
+    <div class="buttons">
+        <input type="submit" class="button" value="submit" />
+    </div>
+</div>
+ </form>
+</div>
+{% endblock content %}

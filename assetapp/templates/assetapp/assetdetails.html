@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}All Assets{% endblock title %}
+{% block content %}
+<div class="box">
+    <!-- Box Head -->
+    <div class="box-head">
+        <h2>Full Details of Asset</h2>
+    </div>
+    <!-- End Box Head -->
+        <!-- Form -->
+        <div class="form">
+            <label>Asset Name : </label>
+            <p>{{ more.name }}</p>
+            <label>Asset Type : </label>
+            <p>{{ more.assettype }}</p>
+             <label>Asset Price : </label>
+            <p>{{ more.price }}</p>
+             <label>Purchage Date : </label>
+            <p>{{ more.date }}</p>
+
+        </div>
+        <!-- End Form -->
+</div>
+{% endblock content %}
